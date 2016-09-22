@@ -1,0 +1,54 @@
+<section class="pl-section web-logs-filters">
+
+  <rv-require name="pl-scrolls" src="/public/vendor/plumes/scrolls/pl-scrolls"></rv-require>
+
+  <div class="pl-scrolls">
+    <div class="web-logs-filters-content {{searching ? 'loading' : ''}}">
+      <div class="web-logs-filters-filter">
+        <label for="countWebLogsFilters">Logs count</label>
+        <input id="countWebLogsFilters" type="text" data-type="int" placeholder="50" value="{{fields.count}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="idWebLogsFilters">ID</label>
+        <input id="idWebLogsFilters" type="text" value="{{fields.id}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="dateToWebLogsFilters">Date to</label>
+        <input id="dateToWebLogsFilters" type="text" data-type="date" placeholder="yyyy-mm-dd hh:ii:s" value="{{fields.dateTo}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="dateFromWebLogsFilters">Date from</label>
+        <input id="dateFromWebLogsFilters" type="text" data-type="date" placeholder="yyyy-mm-dd hh:ii:s" value="{{fields.dateFrom}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="typeWebLogsFilters">Type</label>
+        <input id="typeWebLogsFilters" type="text" value="{{fields.type}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="namespaceWebLogsFilters">Namespace</label>
+        <input id="namespaceWebLogsFilters" type="text" placeholder="Regex case insensitive" value="{{fields.namespace}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="logWebLogsFilters">Log</label>
+        <input id="logWebLogsFilters" type="text" placeholder="Regex case insensitive" value="{{fields.log}}" on-keypress="search" />
+      </div>
+      <div class="web-logs-filters-filter">
+        <label for="urlWebLogsFilters">Url</label>
+        <input id="urlWebLogsFilters" type="text" value="{{fields.url}}" on-keypress="search" />
+      </div>
+
+      {{#inject web-logs-filters /}}
+
+      <!--
+        <div class="web-logs-filters-filter">
+          <label for="webLogsFiltersPost">Post ID</label>
+          <input id="webLogsFiltersPost" type="text" value="{{fields.post}}" class="{{postSuccess ? 'success' : ''}}" on-keypress="search" />
+        </div>
+        <div class="web-logs-filters-filter">
+        <label for="webLogsFiltersPostTitle">Post title</label>
+        <input id="webLogsFiltersPostTitle" type="text" placeholder="Regex case insensitive" value="{{fields.postTitle}}" class="{{postTitleSuccess ? 'success' : ''}}" on-keypress="search" />
+      </div>
+      -->
+    </div>
+  </div>
+</section>

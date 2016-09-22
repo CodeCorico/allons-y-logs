@@ -1,0 +1,7 @@
+{
+  "databases": [{
+    "type": "mongo",
+    "name": "WebLogs",
+    "description": "Mongo database containing the web logs aggregation."
+  }]
+}

@@ -1,0 +1,44 @@
+<section class="web-logs-layout-container">
+
+  {{#inject web-logs-layout-before /}}
+
+  <h2 class="{{isSearching ? 'searching' : ''}}">{{isSearching ? 'searching...' : _('Total') + ' ' + total}}</h2>
+  <div class="web-logs-layout">
+
+    <rv-require name="pl-scrolls" src="/public/vendor/plumes/scrolls/pl-scrolls"></rv-require>
+
+    <div class="pl-scrolls">
+      <ul>
+        {{#logs:i}}
+        <li
+          class="
+            web-logs-layout-item
+            {{isError ? 'error' : ''}}
+          "
+        >
+          {{#inject web-logs-layout-line /}}
+
+          <div class="line" style="margin-left: {{chartWidth}}px" on-click="selectLog(i)">
+            <span class="date" title="{{date}}">{{date}}</span>
+            <span class="increase" title="+ {{increase}}">+ {{increase}}</span>
+            <span class="label">
+              {{{label}}}
+            </span>
+          </div>
+          <div class="details" style="height: {{detailsHeight}}px; margin-left: {{chartWidth}}px">
+            <div class="details-content">
+              <ul>
+                {{#details}}
+                <li><span class="key">{{key}}</span> {{{value}}}</li>
+                {{/details}}
+              </ul>
+            </div>
+          </div>
+        </li>
+        {{/logs}}
+      </ul>
+    </div>
+  </div>
+
+  {{#inject web-logs-layout-after /}}
+</section>
