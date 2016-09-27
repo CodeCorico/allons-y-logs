@@ -10,12 +10,7 @@
     <div class="pl-scrolls">
       <ul>
         {{#logs:i}}
-        <li
-          class="
-            web-logs-layout-item
-            {{isError ? 'error' : ''}}
-          "
-        >
+        <li class="web-logs-layout-item {{type}}">
           {{#inject web-logs-layout-line /}}
 
           <div class="line" style="margin-left: {{chartWidth}}px" on-click="selectLog(i)">

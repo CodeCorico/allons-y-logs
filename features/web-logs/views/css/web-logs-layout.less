@@ -39,13 +39,17 @@
 
     .web-logs-layout-item {
       position: relative;
+
+      .date {
+        padding-left: 0.4rem;
+      }
     }
 
     li {
       list-style: none;
       margin-bottom: 0;
       line-height: 2.5rem;
-      padding: 1.2rem 0 0;
+      padding: 0.5rem 0 0;
       margin: 0;
 
       .project-type {
@@ -72,6 +76,10 @@
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+
+      &.warning {
+        background: #fff3de;
       }
 
       &.error {

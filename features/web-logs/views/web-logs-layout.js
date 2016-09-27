@@ -145,7 +145,6 @@
         }
 
         log.date = _formatDate(log.date);
-        log.isError = !!log.error;
         log.detailsHeight = 0;
         log.details = details;
 
