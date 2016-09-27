@@ -2,9 +2,6 @@ module.exports = function() {
   'use strict';
 
   DependencyInjection.model('WebLogModel', function($AbstractModel) {
-    if (!process.env.WEB_LOGS || process.env.WEB_LOGS != 'true') {
-      return;
-    }
 
     var PERMISSIONS = {
           'web-logs-access': {

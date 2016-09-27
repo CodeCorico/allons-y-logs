@@ -3,6 +3,7 @@
 module.exports = function($server) {
 
   $server.use(function(req, res, next) {
+
     var jsonFunction = res.json;
 
     res.json = function(json) {
