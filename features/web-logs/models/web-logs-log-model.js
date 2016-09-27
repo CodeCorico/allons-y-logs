@@ -230,34 +230,32 @@ module.exports = function() {
 
           var count = Math.max(1, Math.min(200, conditions.count && parseInt(conditions.count, 10) || 50));
 
-          this
-            .count()
-            .exec(function(err, total) {
+          _this.native(function(err, collection) {
+
+            collection.count(query, function(err, total) {
               total = total || 0;
 
-              _this.native(function(err, collection) {
+              collection
+                .find(query, {
+                  sort: {
+                    date: -1
+                  },
+                  limit: count
+                })
+                .toArray(function(err, logs) {
+                  if (err) {
+                    callback(err);
+                  }
 
-                collection
-                  .find(query, {
-                    sort: {
-                      date: -1
-                    },
-                    limit: count
-                  })
-                  .toArray(function(err, logs) {
-                    if (err) {
-                      callback(err);
-                    }
-
-                    logs.forEach(function(log) {
-                      log.id = log._id;
-                      delete log._id;
-                    });
-
-                    callback(null, logs, total);
+                  logs.forEach(function(log) {
+                    log.id = log._id;
+                    delete log._id;
                   });
-              });
+
+                  callback(null, logs, total);
+                });
             });
+          });
         }
       };
 
