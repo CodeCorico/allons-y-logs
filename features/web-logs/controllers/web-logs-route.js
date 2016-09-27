@@ -12,7 +12,7 @@ module.exports = {
       return $next();
     }
 
-    document.title = $i18nService._('Logs') + ' - ' + $BodyDataService.data('web').brand;
+    document.title = $i18nService._('Logs') + ' - ' + $Page.get('web').brand;
     $FaviconService.update('/public/web-logs/favicon.png');
 
     $Layout.selectApp('Logs', false);
@@ -32,7 +32,9 @@ module.exports = {
             icon: 'fa fa-filter',
             group: 'group-web-logs-filters',
             ready: function(button) {
-              button.action(false);
+              if ($Layout.get('screen') == 'screen-desktop') {
+                button.action(false);
+              }
             }
           });
 
