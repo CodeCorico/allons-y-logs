@@ -11,6 +11,14 @@ module.exports = function() {
           _logConverters = [];
 
       this.logConverter = function(func) {
+        var funcString = func.toString();
+
+        for (var i = 0; i < _logConverters.length; i++) {
+          if (_logConverters[i].toString() == funcString) {
+            return;
+          }
+        }
+
         _logConverters.push(func);
       };
 
