@@ -31,11 +31,7 @@ module.exports = {
           $Page.leftButtonAdd('web-logs-filters', {
             icon: 'fa fa-filter',
             group: 'group-web-logs-filters',
-            ready: function(button) {
-              if ($Layout.get('screen') == 'screen-desktop') {
-                button.action(false);
-              }
-            }
+            autoOpen: 'main'
           });
 
           $WebLogsService.init();
