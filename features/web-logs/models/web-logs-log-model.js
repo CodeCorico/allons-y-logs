@@ -10,9 +10,18 @@ module.exports = function() {
             isPublic: true
           }
         },
+        LOGS_HOME_TILE = {
+          url: '/logs',
+          cover: '/public/web-logs/web-logs-home.jpg',
+          large: true,
+          centered: {
+            title: 'LOGS'
+          }
+        },
         NAMPESPACES_AVOID = ['allons-y', 'allons-y-models'],
 
         path = require('path'),
+        extend = require('extend'),
         _logsToAdd = [],
         _tickInAction = false,
         _logConverters = [],
@@ -65,11 +74,16 @@ module.exports = function() {
         },
 
         init: function() {
-          var GroupModel = DependencyInjection.injector.model.get('GroupModel');
+          var GroupModel = DependencyInjection.injector.model.get('GroupModel'),
+              UserModel = DependencyInjection.injector.model.get('UserModel');
 
           GroupModel.registerPermissions(PERMISSIONS);
 
           $WebLogsService.model(this);
+
+          UserModel.homeDefaultTile(extend(true, {
+            date: new Date()
+          }, LOGS_HOME_TILE), ['web-logs-access']);
         },
 
         logConverter: function(func) {
