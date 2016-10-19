@@ -2,7 +2,7 @@
   "env": [{
     "type": "confirm",
     "name": "WEB_LOGS",
-    "message": "Save the Web logs to the database:",
+    "message": "Collect the Web logs to the database:",
     "default": false
   }]
 }
