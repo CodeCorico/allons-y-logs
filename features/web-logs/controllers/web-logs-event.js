@@ -16,7 +16,7 @@ module.exports = [{
     UserModel.addHomeTile({
       date: new Date(),
       url: '/logs',
-      cover: '/public/web-logs/web-logs-home.jpg',
+      cover: '/public/web-logs/web-logs-home.png',
       large: true,
       centered: {
         title: 'LOGS'

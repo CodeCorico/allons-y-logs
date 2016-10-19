@@ -6,13 +6,13 @@ module.exports = function() {
     var PERMISSIONS = {
           'web-logs-access': {
             title: 'Access to the Logs app',
-            description: 'Access to the Logs app',
+            description: 'Access to the Logs app.',
             isPublic: true
           }
         },
         LOGS_HOME_TILE = {
           url: '/logs',
-          cover: '/public/web-logs/web-logs-home.jpg',
+          cover: '/public/web-logs/web-logs-home.png',
           large: true,
           centered: {
             title: 'LOGS'
