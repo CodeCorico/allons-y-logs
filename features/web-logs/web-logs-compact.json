@@ -1,5 +1,5 @@
 {
   "files": [
-    "public/web-logs/web-logs-index.js"
+    "./public/web-logs/web-logs-index.js"
   ]
 }
