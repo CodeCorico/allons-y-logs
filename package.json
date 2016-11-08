@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Logs viewer app.",
   "license": "MIT",
-  "homepage": "http://allons-y.io",
+  "homepage": "https://allons-y.io",
   "author": "CodeCorico <hello@codecorico.com>",
   "bugs": "https://github.com/CodeCorico/allons-y-web-logs/issues",
   "repository": {
@@ -14,8 +14,11 @@
     "node": ">=4.1",
     "npm": ">=3.2"
   },
+  "devDependencies": {
+    "allons-y-dev-chore": "^1.0.0"
+  },
   "dependencies": {
-    "allons-y-community": "^1.0.0",
+    "allons-y-community": "^1.0.11",
     "extend": "^3.0.0"
   }
 }
