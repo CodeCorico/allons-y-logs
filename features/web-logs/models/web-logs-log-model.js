@@ -170,8 +170,8 @@ module.exports = function() {
           }
 
           if (typeof log.error == 'object') {
-            log.stack = log.error.stack.toString();
-            log.error = log.error.message;
+            log.stack = log.error.stack && log.error.stack.toString();
+            log.error = log.error.message && log.error.message || log.error;
           }
 
           _logsToAdd.push(log);
