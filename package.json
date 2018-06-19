@@ -19,6 +19,12 @@
   },
   "dependencies": {
     "allons-y-community": "^1.1.0",
-    "extend": "^3.0.0"
-  }
+    "extend": "^3.0.0",
+    "snyk": "^1.83.0"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
